@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="Coding standards for BaseCardHer Sheets">
+    <description>Coding standards for BaseCardHer Sheets</description>
+
+    <rule ref="PSR2"/>
+    <rule ref="PHPCompatibility"/>
+
+    <file>./src</file>
+
+    <arg name="extensions" value="php"/>
+
+    <config name="testVersion" value="7.1-"/>
+</ruleset>
