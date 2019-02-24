@@ -3,6 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/basecardhero/sheets.svg?style=flat-square)](https://packagist.org/packages/basecardhero/sheets)
 [![Build Status](https://img.shields.io/travis/basecardhero/sheets/master.svg?style=flat-square)](https://travis-ci.org/basecardhero/sheets)
 [![Total Downloads](https://img.shields.io/packagist/dt/basecardhero/sheets.svg?style=flat-square)](https://packagist.org/packages/basecardhero/sheets)
+[![codecov](https://codecov.io/gh/basecardhero/sheets/branch/master/graph/badge.svg)](https://codecov.io/gh/basecardhero/sheets)
 
 _This package was created for a project I am working on and does not fully support Google services. Feel free to add functionality by creating a pull request. See [contributing](CONTRIBUTING.md)._
 
