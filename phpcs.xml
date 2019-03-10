@@ -6,6 +6,7 @@
     <rule ref="PHPCompatibility"/>
 
     <file>./src</file>
+    <file>./functions</file>
 
     <arg name="extensions" value="php"/>
 
