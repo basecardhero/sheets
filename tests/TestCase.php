@@ -24,41 +24,55 @@ class TestCase extends PHPUnitTestCase
     }
 
     /**
-     * Create a Mockery spy instance.
+     * Create a Google_Service_Sheets_Spreadsheet instance.
      *
-     * @param string $class The class name.
-     * @param array $parameters Optional constructor parameters.
+     * @param string $spreadsheetId Optional spreadsheet id.
      *
-     * @return \Mockery\MockInterface
+     * @return \Google_Service_Sheets_Spreadsheet
      */
-    protected function spy($class, $parameters = [])
+    protected function createSpreadsheet($spreadsheetId = null)
     {
-        return Mockery::spy($class, $parameters);
+        $spreadsheetId = $spreadsheetId ?? md5(mt_rand());
+
+        return new \Google_Service_Sheets_Spreadsheet(['spreadsheetId' => $spreadsheetId]);
     }
 
     /**
-     * Create a Mockery partial mock instance.
+     * Create a spy instance.
      *
-     * @param string $class The class name.
+     * @param string $abstract The class name. Default stdClass.
      * @param array $parameters Optional constructor parameters.
      *
      * @return \Mockery\MockInterface
      */
-    protected function partial($class, $parameters = [])
+    protected function spy($abstract = \stdClass::class, $parameters = [])
     {
-        return $this->mock($class, $parameters)->makePartial();
+        return Mockery::spy($abstract, $parameters);
     }
 
     /**
-     * Create a Mockery mock instance.
+     * Create a partial mock instance.
      *
-     * @param string $class The class name.
+     * @param string $abstract The class name. Default stdClass.
      * @param array $parameters Optional constructor parameters.
      *
      * @return \Mockery\MockInterface
      */
-    protected function mock($class, $parameters = [])
+    protected function partial($abstract = \stdClass::class, $parameters = [])
     {
-        return Mockery::mock($class, $parameters);
+        return $this->mock($abstract, $parameters)->makePartial();
+    }
+
+    /**
+     * Create a mock instance.
+     *
+     * @param string $abstract The class name. Default stdClass.
+     * @param array $parameters Optional constructor parameters.
+     *
+     * @return \Mockery\MockInterface
+     */
+    protected function mock($abstract = \stdClass::class, $parameters = [])
+    {
+        return Mockery::mock($abstract, $parameters);
     }
 }
