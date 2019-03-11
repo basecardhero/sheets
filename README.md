@@ -12,7 +12,7 @@ _This package was created for a project I am working on and does not fully suppo
 You can install the package via [composer](https://getcomposer.org/):
 
 ``` bash
-$ composer require basecardhero/sheets
+$ composer require basecardhero/spreadsheet
 ```
 
 ## Usage
