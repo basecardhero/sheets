@@ -1,9 +1,9 @@
 # BaseCardHero - Spreadsheet
 
-[![Build Status](https://img.shields.io/travis/basecardhero/sheets/master.svg)](https://travis-ci.org/basecardhero/sheets)
-[![codecov](https://codecov.io/gh/basecardhero/sheets/branch/master/graph/badge.svg)](https://codecov.io/gh/basecardhero/sheets)
-[![License](https://poser.pugx.org/basecardhero/sheets/license)](https://packagist.org/packages/basecardhero/sheets)
-[![composer.lock](https://poser.pugx.org/basecardhero/sheets/composerlock)](https://packagist.org/packages/basecardhero/sheets)
+[![Build Status](https://img.shields.io/travis/basecardhero/spreadsheet/master.svg)](https://travis-ci.org/basecardhero/spreadsheet)
+[![codecov](https://codecov.io/gh/basecardhero/spreadsheet/branch/master/graph/badge.svg)](https://codecov.io/gh/basecardhero/spreadsheet)
+[![License](https://poser.pugx.org/basecardhero/spreadsheet/license)](https://packagist.org/packages/basecardhero/spreadsheet)
+[![composer.lock](https://poser.pugx.org/basecardhero/spreadsheet/composerlock)](https://packagist.org/packages/basecardhero/spreadsheet)
 
 _This package was created for a project I am working on and does not fully support Google services (or the way you may want it to). Feel free to add functionality by creating a pull request. See [contributing](CONTRIBUTING.md)._
 
