@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Coding standards for BaseCardHer Sheets">
-    <description>Coding standards for BaseCardHer Sheets</description>
+<ruleset name="Coding standards for BaseCardHero Spreadsheet">
+    <description>Coding standards for BaseCardHero Spreadsheet</description>
 
     <rule ref="PSR2"/>
     <rule ref="PHPCompatibility"/>

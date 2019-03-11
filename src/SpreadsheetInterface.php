@@ -1,6 +1,6 @@
 <?php
 
-namespace BaseCardHero\Sheets;
+namespace BaseCardHero\Spreadsheet;
 
 interface SpreadsheetInterface
 {
@@ -16,7 +16,7 @@ interface SpreadsheetInterface
      *
      * @param \Google_Service_Sheets_Spreadsheet $spreadsheet
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function setSpreadsheet(\Google_Service_Sheets_Spreadsheet $spreadsheet) : SpreadsheetInterface;
 
@@ -37,7 +37,7 @@ interface SpreadsheetInterface
     /**
      * Create a spreadsheet and set the spreadsheet instance.
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function create() : SpreadsheetInterface;
 
@@ -46,7 +46,7 @@ interface SpreadsheetInterface
      *
      * @param string $spreadsheetId
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function retrieve(string $spreadsheetId) : SpreadsheetInterface;
 
@@ -55,7 +55,7 @@ interface SpreadsheetInterface
      *
      * @param string $title
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function setTitle(string $title) : SpreadsheetInterface;
 
@@ -64,7 +64,7 @@ interface SpreadsheetInterface
      *
      * @param array $columns
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function setColumns(array $columns) : SpreadsheetInterface;
 
@@ -73,7 +73,7 @@ interface SpreadsheetInterface
      *
      * @param array $ranges
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function clearRanges(array $ranges) : SpreadsheetInterface;
 
@@ -83,7 +83,7 @@ interface SpreadsheetInterface
      * @param string $spreadsheetId
      * @param int $sheetId
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function copySheetFrom(string $spreadsheetId, int $sheetId) : SpreadsheetInterface;
 
@@ -92,7 +92,7 @@ interface SpreadsheetInterface
      *
      * @param int $sheetId
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function deleteSheet(int $sheetId) : SpreadsheetInterface;
 }

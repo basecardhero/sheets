@@ -1,4 +1,4 @@
-# BaseCardHero - Sheets
+# BaseCardHero - Spreadsheet
 
 [![Build Status](https://img.shields.io/travis/basecardhero/sheets/master.svg)](https://travis-ci.org/basecardhero/sheets)
 [![codecov](https://codecov.io/gh/basecardhero/sheets/branch/master/graph/badge.svg)](https://codecov.io/gh/basecardhero/sheets)
@@ -29,7 +29,7 @@ require_once '/project/path/vendor/autoload.php';
 // Configure your Google client.
 $client = new \Google_Client();
 $sheetService = new \Google_Service_Sheets($client);
-$spreadsheet = new \BaseCardHero\Sheets\Spreadsheet($sheetService);
+$spreadsheet = new \BaseCardHero\Spreadsheet\Spreadsheet($sheetService);
 ```
 
 #### Create a spreadsheet

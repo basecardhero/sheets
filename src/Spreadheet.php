@@ -1,6 +1,6 @@
 <?php
 
-namespace BaseCardHero\Sheets;
+namespace BaseCardHero\Spreadsheet;
 
 class Spreadsheet implements SpreadsheetInterface
 {
@@ -37,7 +37,7 @@ class Spreadsheet implements SpreadsheetInterface
      *
      * @param \Google_Service_Sheets_Spreadsheet $spreadsheet
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function setSpreadsheet(\Google_Service_Sheets_Spreadsheet $spreadsheet) : SpreadsheetInterface
     {
@@ -71,7 +71,7 @@ class Spreadsheet implements SpreadsheetInterface
     /**
      * Create a Google Sheet.
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function create() : SpreadsheetInterface
     {
@@ -88,7 +88,7 @@ class Spreadsheet implements SpreadsheetInterface
      *
      * @param string $spreadsheetId
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function retrieve(string $spreadsheetId) : SpreadsheetInterface
     {
@@ -102,7 +102,7 @@ class Spreadsheet implements SpreadsheetInterface
      *
      * @param string $title
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function setTitle(string $title) : SpreadsheetInterface
     {
@@ -142,7 +142,7 @@ class Spreadsheet implements SpreadsheetInterface
      *
      * @param array $columns
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function setColumns(array $columns) : SpreadsheetInterface
     {
@@ -169,7 +169,7 @@ class Spreadsheet implements SpreadsheetInterface
      *
      * @param array $ranges
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function clearRanges(array $ranges) : SpreadsheetInterface
     {
@@ -189,7 +189,7 @@ class Spreadsheet implements SpreadsheetInterface
      * @param string $spreadsheetId
      * @param int $sheetId
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function copySheetFrom(string $spreadsheetId, int $sheetId) : SpreadsheetInterface
     {
@@ -209,7 +209,7 @@ class Spreadsheet implements SpreadsheetInterface
      *
      * @param int $sheetId
      *
-     * @return \BaseCardHero\Sheets\SpreadsheetInterface
+     * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
      */
     public function deleteSheet(int $sheetId) : SpreadsheetInterface
     {

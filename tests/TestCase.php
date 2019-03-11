@@ -1,6 +1,6 @@
 <?php
 
-namespace BaseCardHero\Sheets\Tests;
+namespace BaseCardHero\Spreadsheet\Tests;
 
 use \Mockery;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;

@@ -1,10 +1,10 @@
 <?php
 
-namespace BaseCardHero\Sheets\Tests;
+namespace BaseCardHero\Spreadsheet\Tests;
 
-use BaseCardHero\Sheets\Spreadsheet;
-use BaseCardHero\Sheets\Tests\TestCase;
-use BaseCardHero\Sheets\SpreadsheetInterface;
+use BaseCardHero\Spreadsheet\Spreadsheet;
+use BaseCardHero\Spreadsheet\Tests\TestCase;
+use BaseCardHero\Spreadsheet\SpreadsheetInterface;
 
 class SpreadsheetTest extends TestCase
 {
@@ -19,7 +19,7 @@ class SpreadsheetTest extends TestCase
     protected $service;
 
     /**
-     * @var \BaseCardHero\Sheets\Spreadsheet
+     * @var \BaseCardHero\Spreadsheet\Spreadsheet
      */
     protected $spreadsheet;
 
@@ -76,7 +76,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function create_will_create_and_set_the_Google_Service_Sheets_Spreadsheet_instance()
+    public function create_will_create_a_create_request_to_create_a_blank_spreadsheet()
     {
         $this->service->spreadsheets = $this->mock();
         $this->service->spreadsheets->shouldReceive()
@@ -88,7 +88,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function retrieve_will_retrieve_a_Google_Service_Sheets_Spreadsheet_and_set_the_instance()
+    public function retrieve_will_create_a_get_request_for_the_given_spreadsheet_id()
     {
         $spreadsheet = $this->createSpreadsheet();
         $this->service->spreadsheets = $this->mock();
@@ -101,7 +101,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function setTitle_will_add_a_Google_Service_Sheets_Request_to_the_stack()
+    public function setTitle_will_create_a_batch_update_request_to_set_the_title()
     {
         $title = 'My Title';
 
@@ -118,7 +118,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function setColumns_will_add_a_Google_Service_Sheets_ValueRange_to_the_stack()
+    public function setColumns_will_create_a_batch_update_request_to_set_values()
     {
         $columns = [
             [
@@ -147,7 +147,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function clearRanges_will_add_array_of_ranges_to_the_collection()
+    public function clearRanges_will_create_a_batch_clear_request_to_clear_a_range()
     {
         $this->service->spreadsheets_values = $this->mock();
         $this->service->spreadsheets_values->shouldReceive('batchClear')
@@ -163,7 +163,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function copySheetFrom_will_add_a_spreadsheetId_and_sheetId_to_the_collection()
+    public function copySheetFrom_will_create_a_request_to_copy_a_sheet()
     {
         $sourceSpreadsheetId = md5(mt_rand());
 
@@ -181,7 +181,7 @@ class SpreadsheetTest extends TestCase
     }
 
     /** @test */
-    public function deleteSheet_will_add_a_Google_Service_Sheets_Request_to_the_stack()
+    public function deleteSheet_will_create_a_batch_update_request_to_delete_a_sheet()
     {
         $this->service->spreadsheets = $this->mock();
         $this->service->spreadsheets->shouldReceive('batchUpdate')
