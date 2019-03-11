@@ -96,7 +96,6 @@ $otherSheetId = 0;
 $spreadsheet->create()
     ->copySheetFrom($otherSpreadsheetId, $otherSheetId)
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
-copySheetFrom
 ```
 
 #### Delete a sheet within the spreadsheet
