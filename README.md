@@ -1,11 +1,11 @@
-# BaseCardHero - Sheets
+# BaseCardHero - Spreadsheet
 
 [![Build Status](https://img.shields.io/travis/basecardhero/sheets/master.svg)](https://travis-ci.org/basecardhero/sheets)
 [![codecov](https://codecov.io/gh/basecardhero/sheets/branch/master/graph/badge.svg)](https://codecov.io/gh/basecardhero/sheets)
 [![License](https://poser.pugx.org/basecardhero/sheets/license)](https://packagist.org/packages/basecardhero/sheets)
 [![composer.lock](https://poser.pugx.org/basecardhero/sheets/composerlock)](https://packagist.org/packages/basecardhero/sheets)
 
-_This package was created for a project I am working on and does not fully support Google services. Feel free to add functionality by creating a pull request. See [contributing](CONTRIBUTING.md)._
+_This package was created for a project I am working on and does not fully support Google services (or the way you may want it to). Feel free to add functionality by creating a pull request. See [contributing](CONTRIBUTING.md)._
 
 ## Installation
 
@@ -21,7 +21,7 @@ You will need to install the [Google Client](https://github.com/googleapis/googl
 
 ### Examples
 
-#### Create a Google Sheet
+#### Create a Spreadsheet instance
 
 ``` php
 require_once '/project/path/vendor/autoload.php';
@@ -29,13 +29,85 @@ require_once '/project/path/vendor/autoload.php';
 // Configure your Google client.
 $client = new \Google_Client();
 $sheetService = new \Google_Service_Sheets($client);
-$sheets = new \BaseCardHero\Sheets\Sheets($sheetService);
-
-$sheetId = $sheets->create('My Sheet Title');
-
-echo $sheetId; // pq938fnqp9348fqp948fq3p948fhqp349fh
+$spreadsheet = new \BaseCardHero\Spreadsheet\Spreadsheet($sheetService);
 ```
 
+#### Create a spreadsheet
+
+The `create()` method will fetch a new spreadsheet from the rest service.
+
+``` php
+$spreadsheet->create()
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+```
+
+#### Retrieve a spreadsheet
+
+The `retrieve()` method will fetch an existing spreadsheet from the rest service.
+
+``` php
+$spreadsheetId = '1b7c48b64ef1d5bf093632e7f8aa6529';
+
+$spreadsheet->retrieve($spreadsheetId)
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+```
+
+#### Set the title
+
+``` php
+$spreadsheet->create()
+    ->setTitle('My Spreadsheet Title')
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+```
+
+#### Set column data
+
+``` php
+$columns = [
+    [
+        'range' => 'A1:A',
+        'values' => [0, 1, 2, 3]
+    ],
+    [
+        'range' => 'B1:B',
+        'values' => ['a', 'b', 'c', 'd']
+    ],
+];
+
+$spreadsheet->create()
+    ->setColumns($columns)
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+```
+
+#### Clearing data on a spreadsheet
+
+``` php
+$spreadsheet->create()
+    ->clearRanges(['A1:A', 'B1:B'])
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+```
+
+#### Copying a sheet from another spreadsheet
+
+``` php
+$otherSpreadsheetId = '635d0d664ff92db666a9be5ed84f231c';
+$otherSheetId = 0;
+
+$spreadsheet->create()
+    ->copySheetFrom($otherSpreadsheetId, $otherSheetId)
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+copySheetFrom
+```
+
+#### Delete a sheet within the spreadsheet
+
+``` php
+$sheetId = 0;
+
+$spreadsheet->create()
+    ->deleteSheet($sheetId)
+    ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
+```
 
 ### Testing
 
@@ -57,7 +129,7 @@ If you discover any security related issues, please email ryan@basecardhero.com 
 
 ## Credits
 
-- [Base Card Hero](https://github.com/basecardhero)
+- [Base Card Hero](https://github.com/basecardhero) | [basecardhero.com](https://basecardhero.com/)
 - [All Contributors](../../contributors)
 
 ## License

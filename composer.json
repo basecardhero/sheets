@@ -1,7 +1,7 @@
 {
-    "name": "basecardhero/sheets",
+    "name": "basecardhero/spreadsheet",
     "description": "A Google services wrapper library for creating Google Sheets.",
-    "homepage": "https://github.com/basecardhero/sheets",
+    "homepage": "https://github.com/basecardhero/spreadsheet",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -24,12 +24,15 @@
     },
     "autoload": {
         "psr-4": {
-            "BaseCardHero\\Sheets\\": "src"
-        }
+            "BaseCardHero\\Spreadsheet\\": "src"
+        },
+        "files": [
+            "functions/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "BaseCardHero\\Sheets\\Tests\\": "tests"
+            "BaseCardHero\\Spreadsheet\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,7 +46,10 @@
             "@phpcs",
             "@test-coverage"
         ],
-        "lint": "parallel-lint ./src",
+        "lint": [
+            "parallel-lint ./src",
+            "parallel-lint ./functions"
+        ],
         "phpcbf": "phpcbf",
         "phpcs": "phpcs",
         "test": "phpunit",
