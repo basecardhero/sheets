@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "BaseCardHero\\Sheets\\": "src"
-        }
+        },
+        "files": [
+            "functions/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -43,7 +46,10 @@
             "@phpcs",
             "@test-coverage"
         ],
-        "lint": "parallel-lint ./src",
+        "lint": [
+            "parallel-lint ./src",
+            "parallel-lint ./functions"
+        ],
         "phpcbf": "phpcbf",
         "phpcs": "phpcs",
         "test": "phpunit",
