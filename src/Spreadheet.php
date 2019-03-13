@@ -69,6 +69,18 @@ class Spreadsheet implements SpreadsheetInterface
     }
 
     /**
+     * Get the spreadsheet url.
+     *
+     * @return string|null
+     */
+    public function getSpreadsheetUrl() : ?string
+    {
+        if ($this->getSpreadsheetId()) {
+            return sprintf('https://docs.google.com/spreadsheets/d/%s/edit', $this->getSpreadsheetId());
+        }
+    }
+
+    /**
      * Create a Google Sheet.
      *
      * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface
