@@ -19,9 +19,9 @@ $ composer require basecardhero/spreadsheet
 
 You will need to configure the [Google Client](https://github.com/googleapis/google-api-php-client). See [gsuitedevs/php-samples](https://github.com/gsuitedevs/php-samples) for examples configuring a Google Client for php.
 
-## Examples
+### Examples
 
-### Create a Spreadsheet instance
+#### Create a Spreadsheet instance
 
 ``` php
 require_once '/project/path/vendor/autoload.php';
@@ -32,7 +32,7 @@ $sheetService = new \Google_Service_Sheets($client);
 $spreadsheet = new \BaseCardHero\Spreadsheet\Spreadsheet($sheetService);
 ```
 
-### Create a spreadsheet
+#### Create a spreadsheet
 
 The `create()` method will fetch a new spreadsheet from the rest service.
 
@@ -41,7 +41,7 @@ $spreadsheet->create()
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-### Retrieve a spreadsheet
+#### Retrieve a spreadsheet
 
 The `retrieve()` method will fetch an existing spreadsheet from the rest service.
 
@@ -52,7 +52,7 @@ $spreadsheet->retrieve($spreadsheetId)
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-### Set the title
+#### Set the title
 
 ``` php
 $spreadsheet->create()
@@ -60,7 +60,7 @@ $spreadsheet->create()
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-### Set column data
+#### Set column data
 
 ``` php
 $columns = [
@@ -79,7 +79,7 @@ $spreadsheet->create()
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-### Clearing data on a spreadsheet
+#### Clearing data on a spreadsheet
 
 ``` php
 $spreadsheet->create()
@@ -87,7 +87,7 @@ $spreadsheet->create()
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-### Copying a sheet from another spreadsheet
+#### Copying a sheet from another spreadsheet
 
 ``` php
 $otherSpreadsheetId = '635d0d664ff92db666a9be5ed84f231c';
@@ -98,7 +98,7 @@ $spreadsheet->create()
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-### Delete a sheet within the spreadsheet
+#### Delete a sheet within the spreadsheet
 
 ``` php
 $sheetId = 0;
@@ -108,21 +108,21 @@ $spreadsheet->create()
     ->getSpreadsheet(); // \Google_Service_Sheets_Spreadsheet
 ```
 
-## Testing
+### Testing
 
 ``` bash
 $ composer all
 ```
 
-## Changelog
+### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing
+### Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Security
+### Security
 
 If you discover any security related issues, please email ryan@basecardhero.com instead of using the issue tracker.
 
