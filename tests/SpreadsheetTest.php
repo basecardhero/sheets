@@ -64,15 +64,31 @@ class SpreadsheetTest extends TestCase
         $this->assertEquals($spreadsheet->getSpreadsheetId(), $this->spreadsheet->getSpreadsheetId());
     }
 
+    /** @test */
     public function getSpreadsheetId_will_return_the_spreadsheet_id()
     {
-        $this->spreadsheet = $this->partial(Spreadsheet::class, [$this->service]);
+        $spreadsheet = $this->createSpreadsheet();
 
+        $this->spreadsheet = $this->partial(Spreadsheet::class, [$this->service]);
         $this->assertNull($this->spreadsheet->getSpreadsheetId());
 
         $this->spreadsheet->setSpreadsheet($spreadsheet);
+        $this->assertEquals($spreadsheet->getSpreadsheetId(), $this->spreadsheet->getSpreadsheetId());
+    }
 
-        $this->assertEquals($spreadsheet, $this->spreadsheet->getSpreadsheet());
+    /** @test */
+    public function getSpreadsheetUrl_will_return_the_spreadsheet_url()
+    {
+        $spreadsheet = $this->createSpreadsheet();
+
+        $this->spreadsheet = $this->partial(Spreadsheet::class, [$this->service]);
+        $this->assertNull($this->spreadsheet->getSpreadsheetId());
+
+        $this->spreadsheet->setSpreadsheet($spreadsheet);
+        $this->assertEquals(
+            sprintf('https://docs.google.com/spreadsheets/d/%s/edit', $spreadsheet->getSpreadsheetId()),
+            $this->spreadsheet->getSpreadsheetUrl()
+        );
     }
 
     /** @test */

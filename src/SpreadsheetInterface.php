@@ -35,6 +35,13 @@ interface SpreadsheetInterface
     public function getSpreadsheetId() : ?string;
 
     /**
+     * Get the spreadsheet url.
+     *
+     * @return string|null
+     */
+    public function getSpreadsheetUrl() : ?string;
+
+    /**
      * Create a spreadsheet and set the spreadsheet instance.
      *
      * @return \BaseCardHero\Spreadsheet\SpreadsheetInterface

@@ -8,22 +8,6 @@ use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 class TestCase extends PHPUnitTestCase
 {
     /**
-     * Override parent::tearDown().
-     *
-     * @see https://github.com/GrahamCampbell/Laravel-TestBench/blob/v1.1.2/src/Traits/HelperTestCaseTrait.php#L57
-     */
-    public function tearDown()
-    {
-        parent::tearDown();
-
-        if ($container = Mockery::getContainer()) {
-            $this->addToAssertionCount($container->mockery_getExpectationCount());
-        }
-
-        Mockery::close();
-    }
-
-    /**
      * Create a Google_Service_Sheets_Spreadsheet instance.
      *
      * @param string $spreadsheetId Optional spreadsheet id.
